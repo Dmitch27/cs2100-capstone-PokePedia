@@ -16,6 +16,7 @@ async function fetchPokemonList() {
             if(!detailResponse.ok){
                 throw new Error("Failed to retrieve " + pokemon.name);
             }
+            return await detailResponse.json();
         })
     );
 
