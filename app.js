@@ -92,6 +92,9 @@ async function startApp() {
 
         const apiResults = await fetchPokemonList();
 
+        console.log("API results:", apiResults);
+        console.log("First result:", apiResults[0]);
+
         const pokemonList = apiResults.map(createPokemonData);
 
         console.log("PokéMobile Pokémon data:", pokemonList);
