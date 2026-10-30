@@ -24,12 +24,12 @@ async function fetchPokemonList() {
 }
 
 function createPokemonData(pokemon) {
-    const artwork = pokemon.sprites.other["official-artwork"]?.front_defaults;
+    const artwork = pokemon.sprites.other["official-artwork"].front_default;
 
     return {
         id: pokemon.id,
         name: pokemon.name,
-        image: artwork || pokemon.sprites.front_defaults,
+        image: artwork || pokemon.sprites.front_default,
         types: pokemon.types.map(function (item) {
             return item.type.name;
         })
