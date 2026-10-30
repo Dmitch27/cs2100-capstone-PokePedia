@@ -67,7 +67,7 @@ function displayPokemon(pokemonList) {
             item.appendChild(number);
 
             const types = document.createElement("div");
-            types.classList.add("pokemon-type", type);
+            types.classList.add("pokemon-types");
 
             pokemon.types.forEach(function (type) {
                 const label = document.createElement("span");
