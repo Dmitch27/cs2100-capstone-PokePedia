@@ -27,6 +27,38 @@ header {
     font-weight: bold;
 }
 
+.controls {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.pokemon-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 25px 10px;
+    background: #555;
+    color: #ffffff;
+}
+
+#search-form {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+#search-input {
+    flex: 1;
+    min-width: 180px;
+}
+
 nav ul {
     display: flex;
     flex-wrap: wrap;
@@ -34,4 +66,43 @@ nav ul {
     padding: 0;
     margin: 0;
     list-style: none;
+}
+
+nav a {
+    color: #222;
+    text-decoration: none;
+}
+
+main {
+    margin: 25px 0;
+}
+
+section {
+    margin-bottom: 25px;
+    padding: 20px;
+    border: 2px solid #222;
+    border-radius: 25px;
+    background-color: #ffffff;
+}
+
+input {
+    padding: 10px 15px;
+    font: inherit;
+    border: 1px solid #777;
+    border-radius: 20px;
+}
+
+select {
+    padding: 10px 15px;
+    font: inherit;
+    border: 1px solid #777;
+    border-radius: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    font: inherit;
+    border: 1px solid #777;
+    border-radius: 20px;
+    cursor: pointer;
 }
