@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="UTf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>PokeMobile</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="app.js" defer> </script>
+    </head>
+
+    <body>
+
+        <header>
+            <div class="logo">PokeMobile</div>
+
+            <h1>PokeMobile</h1>
+
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a href="#types">Types</a></li>
+                    <li><a href="#compare">Compare</a></li>
+                    <li><a href="#home">Home</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="home">
+            <section class="search-section" aria-label="Find Pokemon">
+                <form id="search-form">
+                    <label for="search-input">Search Pokemon</label>
+                    <input type="search";
+                            id="search-input";
+                            placeholder="Enter a Pokemon name or ID">
+                    <button type="submit">Search</button>
+                </form>
+
+                <div class="controls">
+                    <button type="button" id="Compare-button">Compare Pokemon</button>
+                    
+                <div id="types">
+                    <label for="type-filter">Filter by type:</label>
+                    <select id="type-filter">
+                        <option value="">All Types</option>
+                    </select>
+                </div>    
+                </div>
+            </section>
+
+            <section class="Pokemon-section" aria-label="Pokemon list">
+                <h2>Explore Pokemon</h2>
+                <p id="status">Loading Pokemon...</p>
+                
+                <div id="pokemon-list" class="pokemon-list">
+                    //Reminder add pokemon later with JS.... :]
+                </div>
+            </section>
+
+            <section id="Compare">
+                <h2>Pokemon Comparision</h2>
+                <p>Select Pokemon to compare their stats and evolutionary lines</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Pokemon Information provided by <a href="https://pokeapi.co/"
+                target="_blank"
+                rel="noopener noreferrer">PokeAPI</a>
+            </p>
+        </footer>
+        
+    </body>
+</html>
