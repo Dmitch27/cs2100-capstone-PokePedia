@@ -47,6 +47,18 @@ header {
     color: #ffffff;
 }
 
+.pokemon-card {
+    display: flex;
+    flex: 0 1 180px;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    text-align: center;
+}
+
 #search-form {
     display: flex;
     align-items: center;
@@ -106,3 +118,86 @@ button {
     border-radius: 20px;
     cursor: pointer;
 }
+
+.pokemon-card img {
+    width: 150px;
+    height: 150PX;
+    max-width: 100%;
+    object-fit: contain;
+    border: 5px sold white;
+    border-radius: 50%;
+    background-color: #606060;
+    box-shadow: 0 4px 5px #333;
+}
+
+.pokemon-card h3 {
+    margin: 15px 0 5px;
+    font-size: 1.1rem;
+    font-weight: normal;
+    text-transform: capitalize;
+}
+
+.pokemon-number {
+    color: #bbb;
+}
+
+.pokemon-type {
+    min-width: 75px;
+    padding: 3px 10px;
+    border-radius: 6px;
+    background-color: #999;
+    color: white;
+    font-size: 0.8rem;
+}
+
+.pokemon-type.fire { background-color: #ff8428; }
+.pokemon-type.water { background-color: #4599e8; }
+.pokemon-type.grass { background-color: #55a85b; }
+.pokemon-type.flying { background-color: #82d5e8; color: #222; }
+.pokemon-type.electric { background-color: #e9c942; color: #222; }
+.pokemon-type.poison { background-color: #a65bc2; }
+.pokemon-type.bug { background-color: #91a832; }
+.pokemon-type.normal { background-color: #aaa; color: #222; }
+.pokemon-type.ground { background-color: #c9a66b; color: #222; }
+.pokemon-type.fairy { background-color: #e99bc4; color: #222; }
+.pokemon-type.fighting { background-color: #bd5548; }
+.pokemon-type.psychic { background-color: #ed6b9b; }
+.pokemon-type.rock { background-color: #a99b62; }
+.pokemon-type.steel { background-color: #9ba8bd; color: #222; }
+.pokemon-type.ice { background-color: #78d4d4; color: #222; }
+.pokemon-type.ghost { background-color: #7465a8; }
+.pokemon-type.dragon { background-color: #7760df; }
+.pokemon-type.dark { background-color: #625b56; }
+
+footer{
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #222;
+    border-radius: 25px;
+    background-color: #ffffff;
+}
+
+@media (max-width: 700px) {
+    body {
+        padding: 10px;
+    }
+    header{
+        flex-direction: column;
+    }
+    .pokemon-list {
+        justify-content: center;
+        gap: 25px;
+    }
+    .pokemon-card {
+        flex-basis: 140px;
+    }
+    .pokemon-card img{
+        width: 120px;
+        height: 120px;
+    }
+    .controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
