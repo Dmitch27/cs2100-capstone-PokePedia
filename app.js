@@ -24,7 +24,7 @@ async function fetchPokemonList() {
 }
 
 function createPokemonData(pokemon) {
-    const artwork = pokemon.sprites.other["official-artwork"].front_defaults;
+    const artwork = pokemon.sprites.other["official-artwork"]?.front_defaults;
 
     return {
         id: pokemon.id,
@@ -96,6 +96,8 @@ async function startApp() {
         console.log("First result:", apiResults[0]);
 
         const pokemonList = apiResults.map(createPokemonData);
+
+        console.log("First pokemon image URL:", pokemonList[0].image);
 
         console.log("PokéMobile Pokémon data:", pokemonList);
 
