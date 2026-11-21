@@ -1,4 +1,5 @@
 const API_URL = "https://pokeapi.co/api/v2/pokemon?limit=20";
+let allPokemon = [];
 
 async function fetchPokemonList() {
     const response = await fetch(API_URL);
@@ -42,46 +43,46 @@ function displayPokemon(pokemonList) {
 
     container.replaceChildren();
 
-    status.textContent =
-        "Showing " + pokemonList.length + " Pokémon.";
+    const fragement = document.createDocumentFragment();
 
-    pokemonList.forEach(function (pokemon) {
-        const item = document.createElement("article");
-        item.classList.add("pokemon-card");
+    pokemonList.forEach(function(pokemon){
+        const item = document.ceateElement("article");
+        item.classList.add("Pokemon-Card");
 
-    if (pokemon.image) {
-                const image = document.createElement("img");
-                image.src = pokemon.image;
-                image.alt = pokemon.name;
-                image.loading = "lazy";
-                item.appendChild(image);
-            }
+        if(pokemon.image) {
+            const image = document.createElement("img");
+            image.src = pokemon.images;
+            image.alt = pokemon.name;
+            image.loading = "lazy";
+            item.appendChild(image);
+        }
 
-            const name = document.createElement("h3");
-            name.textContent = pokemon.name;
-            item.appendChild(name);
+        const name = document.createElement("h3");
+        name.textContent = pokemon.name;
+        item.appendChild(name);
 
-            const number = document.createElement("span");
-            number.classList.add("pokemon-number");
-            number.textContent =
-                "#" + String(pokemon.id).padStart(4, "0");
-            item.appendChild(number);
+        const number = document.createElement("span");
+        number.classList.add("pokemon-number");
+        number.textContent = "#" + String(pokemon.id).padStart(4, "0");
+        item.appendChild(number);
 
-            const types = document.createElement("div");
-            types.classList.add("pokemon-types");
+        const types = document.createElement("div");
+        type.classList.add("pokemon-types");
 
-            pokemon.types.forEach(function (type) {
-                const label = document.createElement("span");
-                label.classList.add("pokemon-type", type);
-                label.textContent =
-                type.charAt(0).toUpperCase() + type.slice(1);
+        pokemon.types.forEach(function (type) {
+            const label = document.createElement("span");
+            label.classList.add("pokemon-type", type);
+
+            label.textContent = type.charAt(0).toUpperCase() + type.slice(1);
 
             types.appendChild(label);
         });
 
         item.appendChild(types);
-        container.appendChild(item);
-    });
+    }
+
+
+)
 }
 
 async function startApp() {
