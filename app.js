@@ -25,7 +25,7 @@ async function fetchPokemonList() {
 }
 
 function createPokemonData(pokemon) {
-    const artwork = pokemon.sprites.other["official-artwork"].front_default;
+    const artwork = pokemon.sprites.other["official-artwork"]?.front_default;
 
     return {
         id: pokemon.id,
