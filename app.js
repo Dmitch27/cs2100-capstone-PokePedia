@@ -43,7 +43,7 @@ function displayPokemon(pokemonList) {
 
     container.replaceChildren();
 
-    const fragement = document.createDocumentFragment();
+    const fragment = document.createDocumentFragment();
 
     pokemonList.forEach(function(pokemon){
         const item = document.ceateElement("article");
@@ -79,10 +79,14 @@ function displayPokemon(pokemonList) {
         });
 
         item.appendChild(types);
-    }
 
+        fragment.appendChild(fragment);
 
-)
+    });
+
+    container.appendChild(fragment);
+
+    status.textContent = "Showing" + pokemonList.length + " Pokémon. ";
 }
 
 async function startApp() {
