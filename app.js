@@ -96,12 +96,10 @@ async function startApp() {
         status.textContent = "Loading Pokémon...";
 
         const apiResults = await fetchPokemonList();
+        
+        allPokemon = apiResults.map(createPokemonData);
 
-        const pokemonList = apiResults.map(createPokemonData);
-
-        console.log("PokéMobile Pokémon data:", pokemonList);
-
-        displayPokemon(pokemonList);
+        displayPokemon(allPokemon);
 
     } catch (error) {
         console.error("PokéMobile error:", error);
