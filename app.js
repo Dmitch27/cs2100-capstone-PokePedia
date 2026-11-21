@@ -46,12 +46,12 @@ function displayPokemon(pokemonList) {
     const fragment = document.createDocumentFragment();
 
     pokemonList.forEach(function(pokemon){
-        const item = document.ceateElement("article");
-        item.classList.add("Pokemon-Card");
+        const item = document.createElement("article");
+        item.classList.add("pokemon-Card");
 
         if(pokemon.image) {
             const image = document.createElement("img");
-            image.src = pokemon.images;
+            image.src = pokemon.image;
             image.alt = pokemon.name;
             image.loading = "lazy";
             item.appendChild(image);
@@ -67,7 +67,7 @@ function displayPokemon(pokemonList) {
         item.appendChild(number);
 
         const types = document.createElement("div");
-        type.classList.add("pokemon-types");
+        types.classList.add("pokemon-types");
 
         pokemon.types.forEach(function (type) {
             const label = document.createElement("span");
@@ -80,7 +80,7 @@ function displayPokemon(pokemonList) {
 
         item.appendChild(types);
 
-        fragment.appendChild(fragment);
+        fragment.appendChild(item);
 
     });
 
