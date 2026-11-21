@@ -26,12 +26,50 @@
 
         <main id="home">
             <section class="search-section" aria-label="Find Pokemon">
-                <form id="search-form">
-                    <label for="search-input">Search Pokemon</label>
+                
+                <form id="search-form" novalidate>
+
+                <div class="form-group">
+                    <label for="search-input">Search Pokemon:</label>
                     <input type="search"
                             id="search-input"
-                            placeholder="Enter a Pokemon name or ID">
-                    <button type="submit">Search</button>
+                            name="search"
+                            placeholder="Enter a Pokemon name or ID"
+                            required
+                            minlength="2"
+                            aria-describedby="search-error">
+                    <span id="search-error" class="error-message" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="min-number">Minium Pokedex number</label>
+                    <input type="number"
+                            id="min-number"
+                            name="min-number"
+                            min="1"
+                            max="20"
+                            step="1"
+                            required
+                            aria-describedby="min-error">
+                    <span id="min-error" class="error-message" aria-live="polite"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="max-number">Maximum Pokedex number</label>
+                    <input type="number"
+                            id="max-number"
+                            name="max-number"
+                            min="1"
+                            max="20"
+                            step="1"
+                            required
+                            aria-describedby="max-error">
+                    <span id="max-error" class="error-message" aria-live="polite"></span>
+                </div>
+
+                <button type="submit">Apply Filters</button>
+
+                <button type="reset">Clear Filters</button>
                 </form>
 
                 <div class="controls">
