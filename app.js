@@ -185,9 +185,18 @@ function validateForm() {
 function setupEventListeners(){
     const searchInput = document.querySelector("#search-input");
     const typeFilter = document.querySelector("#type-filter");
+    const searchForm = document.querySelector("#search-form");
 
     searchInput.addEventListener("input", filterPokemon);
     typeFilter.addEventListener("change", filterPokemon);
+
+    searchForm.addEventListener("submit", function(event){
+        event.preventDefault();
+
+        if (validateForm()){
+            filterPokemon();
+        }
+    });
 }
 
 startApp();
