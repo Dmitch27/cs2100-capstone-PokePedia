@@ -130,7 +130,7 @@ function filterPokemon () {
 
         return matchesSearch && matchesType && matchesNumber;
     });
-    
+
     displayPokemon(filterPokemon);
 }
 
@@ -202,6 +202,18 @@ function setupEventListeners(){
         if (validateForm()){
             filterPokemon();
         }
+    });
+
+    searchForm.addEventListener("reset", function(){
+        setTimeout(function(){
+            document.querySelector("#search-error").textContent = "";
+            document.querySelector("#min-error").textContent = "";
+            document.querySelector("#max-error").textContent= "";
+
+            document.querySelector("#type-filter").value = "";
+
+            displayPokemon(allPokemon);
+        }, 0);
     });
 }
 
