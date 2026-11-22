@@ -99,6 +99,8 @@ async function startApp() {
         
         allPokemon = apiResults.map(createPokemonData);
 
+        setupEventListeners();
+
         displayPokemon(allPokemon);
 
     } catch (error) {
@@ -106,6 +108,32 @@ async function startApp() {
         status.textContent =
             "Unable to load Pokémon. Please try again later.";
     }
+}
+
+function filterPokemon () {
+    const searchInput = document.querySelector("#search-input");
+    const typeFilter = document.querySelector("#type-filter");
+
+    const searchValue = searchInput.value.trim().toLowercase();
+    const selectedType = typeFilter.value;
+
+    const filterPokemon = allPokemon.filter(function(pokemon){
+
+        const matchesSearch = pokemon.name.includes(searchValue) || String(pokemon.id) === searchValue;
+
+        const matchesType = selectedType === "" || pokemon.types.includes(selectedType);
+    
+        return matchesSearch && matchesType;
+    });
+    displayPokemon(filterPokemon);
+}
+
+function setupEventListeners(){
+    const searchInput = document.querySelector("#search-input");
+    const typeFilter = document.querySelector("#tpe-filter");
+
+    searchInput.addEventListener("input", filterPokemon);
+    typeFilter.addEventListener("change", filterPokemon);
 }
 
 startApp();
