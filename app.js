@@ -86,7 +86,7 @@ function displayPokemon(pokemonList) {
 
     container.appendChild(fragment);
 
-    status.textContent = "Showing" + pokemonList.length + " Pokémon.";
+    status.textContent = "Showing " + pokemonList.length + " Pokémon.";
 }
 
 async function startApp() {
@@ -114,7 +114,7 @@ function filterPokemon () {
     const searchInput = document.querySelector("#search-input");
     const typeFilter = document.querySelector("#type-filter");
 
-    const searchValue = searchInput.value.trim().toLowercase();
+    const searchValue = searchInput.value.trim().toLowerCase();
     const selectedType = typeFilter.value;
 
     const filterPokemon = allPokemon.filter(function(pokemon){
@@ -130,7 +130,7 @@ function filterPokemon () {
 
 function setupEventListeners(){
     const searchInput = document.querySelector("#search-input");
-    const typeFilter = document.querySelector("#tpe-filter");
+    const typeFilter = document.querySelector("#type-filter");
 
     searchInput.addEventListener("input", filterPokemon);
     typeFilter.addEventListener("change", filterPokemon);
