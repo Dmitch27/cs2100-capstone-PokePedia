@@ -141,29 +141,45 @@ function validateForm() {
     minError.textContent = "";
     maxError.textContent = "";
 
-    let isvalid = true;
+    let isValid = true;
 
     if (searchInput.value.trim() !== "" && searchInput.value.trim().length < 2) {
 
         searchError.textContent = "Please enter at least 2 characters-";
 
-        isvalid = false;
+        isValid = false;
     }
 
-    const min = Number(minNumber.value);
+        const min = Number(minNumber.value);
 
-    if (minNumber.value === "" || !Number.isInteger(min) || min < 1 || min > 20) {
+    if (minNumber.value === "" ||
+        !Number.isInteger(min) || min < 1 || min > 20) {
 
-        minError.textContent = "Enter a whole number between 1 and 20-";
+        minError.textContent =
+            "Enter a whole number between 1 and 20.";
 
-        isvalid = false;
-    }else if (minNumber.value !== "" && max < min){
-
-        maxError.textContent = "Maximum number cannot be less than minimum.";
-
-        isvalid = false;
+        isValid = false;
     }
-    return isvalid;
+
+    const max = Number(maxNumber.value);
+
+    if (maxNumber.value === "" ||
+        !Number.isInteger(max) || max < 1 || max > 20) {
+
+        maxError.textContent =
+            "Enter a whole number between 1 and 20.";
+
+        isValid = false;
+
+    } else if (minNumber.value !== "" && max < min) {
+
+        maxError.textContent =
+            "Maximum number cannot be less than minimum.";
+
+        isValid = false;
+    }
+
+    return isValid;
 }
 
 function setupEventListeners(){
