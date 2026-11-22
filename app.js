@@ -47,7 +47,7 @@ function displayPokemon(pokemonList) {
 
     pokemonList.forEach(function(pokemon){
         const item = document.createElement("article");
-        item.classList.add("pokemon-Card");
+        item.classList.add("pokemon-card");
 
         if(pokemon.image) {
             const image = document.createElement("img");
@@ -86,7 +86,7 @@ function displayPokemon(pokemonList) {
 
     container.appendChild(fragment);
 
-    status.textContent = "Showing" + pokemonList.length + " Pokémon. ";
+    status.textContent = "Showing" + pokemonList.length + " Pokémon.";
 }
 
 async function startApp() {
