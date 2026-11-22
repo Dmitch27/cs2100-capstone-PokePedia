@@ -35,7 +35,6 @@
                             id="search-input"
                             name="search"
                             placeholder="Enter a Pokemon name or ID"
-                            required
                             minlength="2"
                             aria-describedby="search-error">
                     <span id="search-error" class="error-message" aria-live="polite"></span>
@@ -49,6 +48,7 @@
                             min="1"
                             max="20"
                             step="1"
+                            value="1"
                             required
                             aria-describedby="min-error">
                     <span id="min-error" class="error-message" aria-live="polite"></span>
@@ -62,6 +62,7 @@
                             min="1"
                             max="20"
                             step="1"
+                            value="20"
                             required
                             aria-describedby="max-error">
                     <span id="max-error" class="error-message" aria-live="polite"></span>
@@ -83,7 +84,7 @@
                         <option value="fire">Fire</option>
                         <option value="water">Water</option>
                         <option value="grass">Grass</option>
-                        <option valur="flying">flying</option>
+                        <option valur="flying">Flying</option>
                     </select>
                 </div>    
                 </div>
@@ -96,7 +97,7 @@
                 <div id="pokemon-list" class="pokemon-list"></div>
             </section>
 
-            <section id="Compare">
+            <section id="compare">
                 <h2>Pokemon Comparision</h2>
                 <p>Select Pokemon to compare their stats and evolutionary lines</p>
             </section>

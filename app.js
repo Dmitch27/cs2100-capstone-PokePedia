@@ -119,12 +119,18 @@ function filterPokemon () {
 
     const filterPokemon = allPokemon.filter(function(pokemon){
 
+        const minNumber = Number(document.querySelector("#min-number").value);
+        const maxNumber = Number(document.querySelector("#max-number").value);
+
         const matchesSearch = pokemon.name.includes(searchValue) || String(pokemon.id) === searchValue;
 
         const matchesType = selectedType === "" || pokemon.types.includes(selectedType);
-    
-        return matchesSearch && matchesType;
+
+        const matchesNumber = pokemon.id >= minNumber && pokemon.id <= maxNumber;
+
+        return matchesSearch && matchesType && matchesNumber;
     });
+    
     displayPokemon(filterPokemon);
 }
 
