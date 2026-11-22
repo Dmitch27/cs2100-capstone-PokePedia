@@ -157,7 +157,7 @@ function validateForm() {
         minError.textContent = "Enter a whole number between 1 and 20-";
 
         isvalid = false;
-    }else if minNumber.value !== "" && max < min){
+    }else if (minNumber.value !== "" && max < min){
 
         maxError.textContent = "Maximum number cannot be less than minimum.";
 
