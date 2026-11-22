@@ -128,6 +128,44 @@ function filterPokemon () {
     displayPokemon(filterPokemon);
 }
 
+function validateForm() {
+    const searchInput = document.querySelector("#search-input");
+    const minNumber = document.querySelector("#min-number");
+    const maxNumber = document.querySelector("#max-number");
+
+    const searchError = document.querySelector("#search-error");
+    const minError = document.querySelector("#min-error");
+    const maxError = document.querySelector("#max-error");
+
+    searchError.textContent = "";
+    minError.textContent = "";
+    maxError.textContent = "";
+
+    let isvalid = true;
+
+    if (searchInput.value.trim() !== "" && searchInput.value.trim().length < 2) {
+
+        searchError.textContent = "Please enter at least 2 characters-";
+
+        isvalid = false;
+    }
+
+    const min = Number(minNumber.value);
+
+    if (minNumber.value === "" || !Number.isInteger(min) || min < 1 || min > 20) {
+
+        minError.textContent = "Enter a whole number between 1 and 20-";
+
+        isvalid = false;
+    }else if minNumber.value !== "" && max < min){
+
+        maxError.textContent = "Maximum number cannot be less than minimum.";
+
+        isvalid = false;
+    }
+    return isvalid;
+}
+
 function setupEventListeners(){
     const searchInput = document.querySelector("#search-input");
     const typeFilter = document.querySelector("#type-filter");
